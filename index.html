@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>GETBIGGER | 12 Week Gym Coaching</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #0b0b0b;
+        color: white;
+        line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+    nav {
+        background: #080808;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid #222;
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ff3b30;
+        letter-spacing: 2px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #ff3b30;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        padding: 60px 8%;
+        background:
+            linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
+            url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=80");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+        line-height: 1;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+        color: #ff3b30;
+    }
+
+    .hero p {
+        font-size: 22px;
+        color: #ddd;
+        margin-bottom: 30px;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #ff3b30;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .button:hover {
+        background: #d92720;
+    }
+
+    .button.dark {
+        background: transparent;
+        border: 2px solid white;
+    }
+
+    /* SECTIONS */
+    section {
+        padding: 80px 8%;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+
+    .section-title span {
+        color: #ff3b30;
+    }
+
+    .section-title p {
+        color: #aaa;
+    }
+
+    /* ABOUT */
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .about img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .about h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .about p {
+        color: #bbb;
+        margin-bottom: 20px;
+    }
+
+    /* COURSE */
+    .course {
+        background: #111;
+    }
+
+    .weeks {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .week {
+        background: #181818;
+        padding: 30px;
+        border-radius: 8px;
+        border-left: 4px solid #ff3b30;
+    }
+
+    .week h3 {
+        color: #ff3b30;
+        margin-bottom: 10px;
+    }
+
+    .week p {
+        color: #bbb;
+    }
+
+    /* FEATURES */
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .feature {
+        background: #151515;
+        padding: 35px;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .feature .icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .feature h3 {
+        margin-bottom: 10px;
+    }
+
+    .feature p {
+        color: #aaa;
+    }
+
+    /* PRICING */
+    .pricing {
+        max-width: 500px;
+        margin: auto;
+        background: #171717;
+        padding: 45px;
+        border-radius: 10px;
+        text-align: center;
+        border: 2px solid #ff3b30;
+    }
+
+    .pricing h3 {
+        font-size: 30px;
+    }
+
+    .price {
+        font-size: 55px;
+        font-weight: bold;
+        color: #ff3b30;
+        margin: 15px;
+    }
+
+    .pricing ul {
+        list-style: none;
+        margin: 25px 0;
+    }
+
+    .pricing li {
+        padding: 8px;
+        color: #ccc;
+    }
+
+    /* CONTACT */
+    .contact {
+        background: #111;
+        text-align: center;
+    }
+
+    .contact p {
+        color: #bbb;
+        margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 30px;
+        background: #050505;
+        color: #777;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        .about,
+        .weeks,
+        .features {
+            grid-template-columns: 1fr;
+        }
+
+        nav {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav a {
+            margin: 5px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">GETBIGGER</div>
+
+    <div>
+        <a href="#about">About</a>
+        <a href="#course">12 Weeks</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            BUILD YOUR<br>
+            <span>BEST SELF.</span>
+        </h1>
+
+        <p>
+            Personal gym coaching designed to help you build muscle,
+            get stronger and become the best version of yourself.
+        </p>
+
+        <a href="#course" class="button">VIEW 12 WEEK PROGRAM</a>
+        <a href="#contact" class="button dark">CONTACT ME</a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="about">
+
+        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1000&q=80" alt="Gym training">
+
+        <div>
+
+            <h2>WELCOME TO <span style="color:#ff3b30;">GETBIGGER</span></h2>
+
+            <p>
+                I'm a gym coach helping people improve their strength,
+                build muscle and gain confidence in the gym.
+            </p>
+
+            <p>
+                Whether you're completely new to training or you've been
+                lifting for years, the GETBIGGER 12 Week Course gives you
+                structure, guidance and accountability.
+            </p>
+
+            <a href="#course" class="button">START YOUR JOURNEY</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 12 WEEK COURSE -->
+<section id="course" class="course">
+
+    <div class="section-title">
+
+        <h2>THE <span>12 WEEK</span> COURSE</h2>
+
+        <p>
+            A structured 12-week plan to help you build strength,
+            muscle and confidence.
+        </p>
+
+    </div>
+
+
+    <div class="weeks">
+
+        <div class="week">
+            <h3>WEEKS 1–2</h3>
+            <p>
+                Learn the fundamentals. Master your technique,
+                establish your routine and build good training habits.
+            </p>
+        </div>
+
+        <div class="week">
+            <h3>WEEKS 3–4</h3>
+            <p>
+                Start progressing. Increase training intensity and
+                begin tracking your strength and performance.
+            </p>
+        </div>
+
+        <div class="week">
+            <h3>WEEKS 5–6</h3>
+            <p>
+                Build momentum. Progressive overload becomes a major
+                focus as you continue developing your physique.
+            </p>
+        </div>
+
+        <div class="week">
+            <h3>WEEKS 7–8</h3>
+            <p>
+                Push your limits. Training becomes more challenging
+                while maintaining proper technique and recovery.
+            </p>
+        </div>
+
+        <div class="week">
+            <h3>WEEKS 9–10</h3>
+            <p>
+                Get stronger. Fine-tune your training and focus on
+                consistent progress week after week.
+            </p>
+        </div>
+
+        <div class="week">
+            <h3>WEEKS 11–12</h3>
+            <p>
+                Finish strong. Review your progress, measure your
+                results and build the foundation for your next goal.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHAT YOU GET -->
+<section>
+
+    <div class="section-title">
+
+        <h2>WHAT YOU <span>GET</span></h2>
+
+        <p>Everything you need to stay consistent.</p>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="icon">🏋️</div>
+            <h3>Training Plan</h3>
+            <p>
+                Structured workouts designed around your goals and
+                experience level.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">📈</div>
+            <h3>Progress Tracking</h3>
+            <p>
+                Track your workouts and strength so you can see your
+                progress over the 12 weeks.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🔥</div>
+            <h3>Accountability</h3>
+            <p>
+                Stay motivated and consistent with coaching and
+                regular check-ins.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing" class="course">
+
+    <div class="section-title">
+
+        <h2>JOIN <span>GETBIGGER</span></h2>
+
+        <p>Ready to start your 12-week transformation?</p>
+
+    </div>
+
+
+    <div class="pricing">
+
+        <h3>12 WEEK COACHING</h3>
+
+        <div class="price">€199</div>
+
+        <p>Complete 12-week coaching program</p>
+
+        <ul>
+            <li>✓ Personalised training plan</li>
+            <li>✓ Weekly progress tracking</li>
+            <li>✓ Coaching support</li>
+            <li>✓ Exercise guidance</li>
+            <li>✓ 12 weeks of accountability</li>
+        </ul>
+
+        <a href="#contact" class="button">JOIN NOW</a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+
+    <div class="section-title">
+
+        <h2>READY TO <span>GETBIGGER?</span></h2>
+
+        <p>
+            Send me a message and let's get your 12-week journey started.
+        </p>
+
+    </div>
+
+    <a href="mailto:YOUR-EMAIL@example.com" class="button">
+        EMAIL ME
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>© 2026 GETBIGGER. All Rights Reserved.</p>
+
+    <p>GYM COACHING • STRENGTH • MUSCLE • CONFIDENCE</p>
+
+</footer>
+```
+
+</body>
+</html>
