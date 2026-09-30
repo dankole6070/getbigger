@@ -1,538 +1,753 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online fitness coaching with personalised training and support.">
+    <title>DANKOLE COACHING | Online Fitness Coaching</title>
 
-```
-<title>GETBIGGER | 12 Week Gym Coaching</title>
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
-
-    body {
-        background: #0b0b0b;
-        color: white;
-        line-height: 1.6;
-    }
-
-    /* NAVIGATION */
-    nav {
-        background: #080808;
-        padding: 20px 8%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        border-bottom: 1px solid #222;
-    }
-
-    .logo {
-        font-size: 28px;
-        font-weight: bold;
-        color: #ff3b30;
-        letter-spacing: 2px;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin-left: 25px;
-        font-weight: bold;
-    }
-
-    nav a:hover {
-        color: #ff3b30;
-    }
-
-    /* HERO */
-    .hero {
-        min-height: 90vh;
-        display: flex;
-        align-items: center;
-        padding: 60px 8%;
-        background:
-            linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
-            url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=80");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .hero-content {
-        max-width: 700px;
-    }
-
-    .hero h1 {
-        font-size: 70px;
-        line-height: 1;
-        margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-        color: #ff3b30;
-    }
-
-    .hero p {
-        font-size: 22px;
-        color: #ddd;
-        margin-bottom: 30px;
-    }
-
-    .button {
-        display: inline-block;
-        padding: 15px 30px;
-        background: #ff3b30;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 5px;
-        margin-right: 10px;
-    }
-
-    .button:hover {
-        background: #d92720;
-    }
-
-    .button.dark {
-        background: transparent;
-        border: 2px solid white;
-    }
-
-    /* SECTIONS */
-    section {
-        padding: 80px 8%;
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-        font-size: 42px;
-        margin-bottom: 10px;
-    }
-
-    .section-title span {
-        color: #ff3b30;
-    }
-
-    .section-title p {
-        color: #aaa;
-    }
-
-    /* ABOUT */
-    .about {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-        align-items: center;
-    }
-
-    .about img {
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    .about h2 {
-        font-size: 40px;
-        margin-bottom: 20px;
-    }
-
-    .about p {
-        color: #bbb;
-        margin-bottom: 20px;
-    }
-
-    /* COURSE */
-    .course {
-        background: #111;
-    }
-
-    .weeks {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-
-    .week {
-        background: #181818;
-        padding: 30px;
-        border-radius: 8px;
-        border-left: 4px solid #ff3b30;
-    }
-
-    .week h3 {
-        color: #ff3b30;
-        margin-bottom: 10px;
-    }
-
-    .week p {
-        color: #bbb;
-    }
-
-    /* FEATURES */
-    .features {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-    }
-
-    .feature {
-        background: #151515;
-        padding: 35px;
-        text-align: center;
-        border-radius: 8px;
-    }
-
-    .feature .icon {
-        font-size: 45px;
-        margin-bottom: 15px;
-    }
-
-    .feature h3 {
-        margin-bottom: 10px;
-    }
-
-    .feature p {
-        color: #aaa;
-    }
-
-    /* PRICING */
-    .pricing {
-        max-width: 500px;
-        margin: auto;
-        background: #171717;
-        padding: 45px;
-        border-radius: 10px;
-        text-align: center;
-        border: 2px solid #ff3b30;
-    }
-
-    .pricing h3 {
-        font-size: 30px;
-    }
-
-    .price {
-        font-size: 55px;
-        font-weight: bold;
-        color: #ff3b30;
-        margin: 15px;
-    }
-
-    .pricing ul {
-        list-style: none;
-        margin: 25px 0;
-    }
-
-    .pricing li {
-        padding: 8px;
-        color: #ccc;
-    }
-
-    /* CONTACT */
-    .contact {
-        background: #111;
-        text-align: center;
-    }
-
-    .contact p {
-        color: #bbb;
-        margin-bottom: 25px;
-    }
-
-    /* FOOTER */
-    footer {
-        text-align: center;
-        padding: 30px;
-        background: #050505;
-        color: #777;
-    }
-
-    /* MOBILE */
-    @media (max-width: 800px) {
-        .hero h1 {
-            font-size: 48px;
+    <style>
+        :root {
+            --purple: #8b5cf6;
+            --purple-dark: #5b21b6;
+            --purple-light: #a78bfa;
+            --black: #07070a;
+            --black-2: #101014;
+            --white: #ffffff;
+            --grey: #b8b8c2;
+            --border: rgba(167, 139, 250, 0.22);
         }
 
-        .about,
-        .weeks,
-        .features {
-            grid-template-columns: 1fr;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        /* NAVBAR */
         nav {
-            flex-direction: column;
-            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 7, 10, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
         }
 
-        nav a {
-            margin: 5px;
+        .nav-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
-    }
-</style>
-```
 
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--purple-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            list-style: none;
+            font-size: 0.95rem;
+            color: #ddd;
+        }
+
+        .nav-links a:hover {
+            color: var(--purple-light);
+        }
+
+        .nav-button {
+            background: var(--purple);
+            padding: 10px 17px;
+            border-radius: 999px;
+            font-weight: 800;
+        }
+
+        .nav-button:hover {
+            background: var(--purple-light);
+            color: var(--black);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 80% 25%, rgba(139,92,246,.25), transparent 35%),
+                radial-gradient(circle at 15% 75%, rgba(91,33,182,.16), transparent 30%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .eyebrow {
+            color: var(--purple-light);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 7vw, 6.2rem);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 24px;
+        }
+
+        h1 span {
+            color: var(--purple-light);
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: var(--grey);
+            font-size: 1.08rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 22px;
+            border-radius: 10px;
+            font-weight: 800;
+            transition: 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--purple);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: var(--purple-light);
+            color: var(--black);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.2);
+            background: rgba(255,255,255,.03);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--purple-light);
+            color: var(--purple-light);
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, rgba(139,92,246,.18), rgba(255,255,255,.035));
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 32px;
+            box-shadow: 0 25px 80px rgba(0,0,0,.45);
+        }
+
+        .hero-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            margin-bottom: 0;
+        }
+
+        .check-list {
+            list-style: none;
+            margin-top: 22px;
+        }
+
+        .check-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            color: #e8e8ec;
+        }
+
+        .check-list li:last-child {
+            border-bottom: 0;
+        }
+
+        .check {
+            color: var(--purple-light);
+            font-weight: 900;
+            margin-right: 8px;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 95px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--grey);
+        }
+
+        .purple {
+            color: var(--purple-light);
+        }
+
+        /* FEATURES */
+        .features {
+            background: var(--black-2);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .feature {
+            border: 1px solid var(--border);
+            background: #0c0c11;
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .feature-number {
+            color: var(--purple-light);
+            font-size: 0.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .feature h3 {
+            margin: 15px 0 8px;
+            font-size: 1.25rem;
+        }
+
+        .feature p {
+            color: var(--grey);
+        }
+
+        /* PRICING */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            max-width: 900px;
+        }
+
+        .price-card {
+            position: relative;
+            background: #0d0d12;
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 24px;
+            padding: 34px;
+        }
+
+        .price-card.featured {
+            border-color: var(--purple);
+            box-shadow: 0 0 45px rgba(139,92,246,.13);
+        }
+
+        .badge {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: var(--purple);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .price-card h3 {
+            font-size: 1.4rem;
+        }
+
+        .price {
+            font-size: 3.2rem;
+            font-weight: 900;
+            margin: 12px 0 5px;
+        }
+
+        .price small {
+            font-size: 0.95rem;
+            color: var(--grey);
+            font-weight: 500;
+        }
+
+        .price-card > p {
+            color: var(--grey);
+        }
+
+        .price-list {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .price-list li {
+            margin: 12px 0;
+            color: #e7e7eb;
+        }
+
+        /* TRANSFORMATION */
+        .transformation {
+            background: var(--black-2);
+        }
+
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .transformation-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 22px;
+            border: 1px solid var(--border);
+            background: #08080b;
+        }
+
+        .transformation-card img {
+            display: block;
+            width: 100%;
+            height: 620px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .transformation-label {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            background: rgba(0,0,0,.78);
+            border: 1px solid rgba(255,255,255,.15);
+            padding: 8px 13px;
+            border-radius: 999px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .transform-note {
+            margin-top: 24px;
+            color: var(--grey);
+            max-width: 750px;
+        }
+
+        /* ABOUT */
+        .about-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-box p {
+            color: var(--grey);
+            margin-bottom: 16px;
+        }
+
+        .quote {
+            border-left: 3px solid var(--purple);
+            padding-left: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: linear-gradient(145deg, #0d0a15, #08080b);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-card {
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.025);
+            border-radius: 22px;
+            padding: 30px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: var(--grey);
+            margin-bottom: 20px;
+        }
+
+        .contact-link {
+            display: block;
+            width: fit-content;
+            color: var(--purple-light);
+            font-weight: 800;
+            margin: 8px 0;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .social {
+            border: 1px solid rgba(255,255,255,.15);
+            padding: 10px 14px;
+            border-radius: 9px;
+            font-weight: 800;
+        }
+
+        .social:hover {
+            border-color: var(--purple);
+            color: var(--purple-light);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 25px 0;
+            color: #888894;
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid,
+            .about-box,
+            .contact-grid,
+            .pricing-grid,
+            .transformation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .transformation-card img {
+                height: 500px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-```
-<!-- NAVIGATION -->
-<nav>
-    <div class="logo">GETBIGGER</div>
+    <nav>
+        <div class="container nav-inner">
+            <a href="#top" class="logo">DANKOLE<span> COACHING</span></a>
 
-    <div>
-        <a href="#about">About</a>
-        <a href="#course">12 Weeks</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
+            <ul class="nav-links">
+                <li><a href="#coaching">Coaching</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#transformation">Transformation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-
-<!-- HERO -->
-<section class="hero">
-
-    <div class="hero-content">
-
-        <h1>
-            BUILD YOUR<br>
-            <span>BEST SELF.</span>
-        </h1>
-
-        <p>
-            Personal gym coaching designed to help you build muscle,
-            get stronger and become the best version of yourself.
-        </p>
-
-        <a href="#course" class="button">VIEW 12 WEEK PROGRAM</a>
-        <a href="#contact" class="button dark">CONTACT ME</a>
-
-    </div>
-
-</section>
-
-
-<!-- ABOUT -->
-<section id="about">
-
-    <div class="about">
-
-        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1000&q=80" alt="Gym training">
-
-        <div>
-
-            <h2>WELCOME TO <span style="color:#ff3b30;">GETBIGGER</span></h2>
-
-            <p>
-                I'm a gym coach helping people improve their strength,
-                build muscle and gain confidence in the gym.
-            </p>
-
-            <p>
-                Whether you're completely new to training or you've been
-                lifting for years, the GETBIGGER 12 Week Course gives you
-                structure, guidance and accountability.
-            </p>
-
-            <a href="#course" class="button">START YOUR JOURNEY</a>
-
+            <a class="nav-button" href="mailto:dank6070@gmail.com?subject=Coaching%20Enquiry">
+                Start Now
+            </a>
         </div>
+    </nav>
 
-    </div>
+    <main id="top">
 
-</section>
+        <section class="hero">
+            <div class="container hero-grid">
 
+                <div>
+                    <div class="eyebrow">Online Fitness Coaching</div>
+                    <h1>BUILD YOUR<br><span>BEST SELF.</span></h1>
 
-<!-- 12 WEEK COURSE -->
-<section id="course" class="course">
+                    <p>
+                        Personalised coaching designed to help you train with purpose,
+                        stay consistent and make real progress.
+                    </p>
 
-    <div class="section-title">
+                    <div class="buttons">
+                        <a class="btn btn-primary" href="#pricing">View Coaching</a>
+                        <a class="btn btn-outline" href="mailto:dank6070@gmail.com?subject=Coaching%20Enquiry">
+                            Email Me
+                        </a>
+                    </div>
+                </div>
 
-        <h2>THE <span>12 WEEK</span> COURSE</h2>
+                <div class="hero-card">
+                    <h3>What you get</h3>
+                    <p>Simple, focused coaching built around your goals and your lifestyle.</p>
 
-        <p>
-            A structured 12-week plan to help you build strength,
-            muscle and confidence.
-        </p>
+                    <ul class="check-list">
+                        <li><span class="check">✓</span>Personalised training guidance</li>
+                        <li><span class="check">✓</span>Progress-focused programming</li>
+                        <li><span class="check">✓</span>Accountability and support</li>
+                        <li><span class="check">✓</span>Goal-based coaching</li>
+                        <li><span class="check">✓</span>12-week transformation option</li>
+                    </ul>
+                </div>
 
-    </div>
+            </div>
+        </section>
 
+        <section class="features" id="coaching">
+            <div class="container">
 
-    <div class="weeks">
+                <div class="section-heading">
+                    <div class="eyebrow">The Process</div>
+                    <h2>TRAIN WITH <span class="purple">PURPOSE.</span></h2>
+                    <p>
+                        Your plan should fit your goals, your schedule and your starting point.
+                    </p>
+                </div>
 
-        <div class="week">
-            <h3>WEEKS 1–2</h3>
-            <p>
-                Learn the fundamentals. Master your technique,
-                establish your routine and build good training habits.
-            </p>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <div class="feature-number">01 / PLAN</div>
+                        <h3>Know What To Do</h3>
+                        <p>Follow a clear training structure instead of guessing what to do in the gym.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-number">02 / PROGRESS</div>
+                        <h3>Track Your Work</h3>
+                        <p>Focus on progressive improvement and build consistency over time.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-number">03 / COMMIT</div>
+                        <h3>Stay Accountable</h3>
+                        <p>Keep your goal in sight and stay consistent throughout your coaching journey.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Coaching Options</div>
+                    <h2>CHOOSE YOUR <span class="purple">PLAN.</span></h2>
+                    <p>Two straightforward options depending on how you want to work.</p>
+                </div>
+
+                <div class="pricing-grid">
+
+                    <div class="price-card">
+                        <h3>Monthly Coaching</h3>
+                        <div class="price">€80 <small>/ month</small></div>
+                        <p>Flexible ongoing coaching.</p>
+
+                        <ul class="price-list">
+                            <li>✓ Personalised coaching</li>
+                            <li>✓ Training guidance</li>
+                            <li>✓ Progress support</li>
+                            <li>✓ Accountability</li>
+                        </ul>
+
+                        <a class="btn btn-outline" href="mailto:dank6070@gmail.com?subject=€80%20Monthly%20Coaching%20Enquiry">
+                            Email to Start
+                        </a>
+                    </div>
+
+                    <div class="price-card featured">
+                        <div class="badge">12 Weeks</div>
+                        <h3>12-Week Course</h3>
+                        <div class="price">€200 <small>/ course</small></div>
+                        <p>A focused 12-week coaching journey.</p>
+
+                        <ul class="price-list">
+                            <li>✓ 12-week structure</li>
+                            <li>✓ Personalised coaching</li>
+                            <li>✓ Goal-focused training</li>
+                            <li>✓ Progress support</li>
+                            <li>✓ Accountability</li>
+                        </ul>
+
+                        <a class="btn btn-primary" href="mailto:dank6070@gmail.com?subject=€200%2012-Week%20Course%20Enquiry">
+                            Start 12 Weeks
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="transformation" id="transformation">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">My Journey</div>
+                    <h2>2-YEAR <span class="purple">TRANSFORMATION.</span></h2>
+                    <p>
+                        A personal before-and-after from a two-year training journey.
+                    </p>
+                </div>
+
+                <div class="transformation-grid">
+
+                    <div class="transformation-card">
+                        <img src="transformation-before.png" alt="Before photo from a two-year fitness transformation">
+                        <div class="transformation-label">BEFORE</div>
+                    </div>
+
+                    <div class="transformation-card">
+                        <img src="transformation-after.png" alt="After photo from a two-year fitness transformation">
+                        <div class="transformation-label">AFTER</div>
+                    </div>
+
+                </div>
+
+                <p class="transform-note">
+                    Consistency, training and patience add up. The goal is to build habits
+                    and make progress you can maintain.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container about-box">
+
+                <div>
+                    <div class="eyebrow">About The Coaching</div>
+                    <h2>NO SHORTCUTS.<br><span class="purple">JUST WORK.</span></h2>
+                </div>
+
+                <div>
+                    <p>
+                        My coaching is built around helping people become more consistent
+                        in the gym and more confident in their training.
+                    </p>
+                    <p>
+                        Whether you're starting out or looking to take your training
+                        more seriously, the focus is on having a clear plan and working
+                        towards measurable goals.
+                    </p>
+                    <p class="quote">
+                        "You don't need to be perfect. You need to be consistent."
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Get In Touch</div>
+                    <h2>READY TO <span class="purple">START?</span></h2>
+                    <p>Send an email or message through social media to enquire about coaching.</p>
+                </div>
+
+                <div class="contact-grid">
+
+                    <div class="contact-card">
+                        <h3>Email & Phone</h3>
+                        <p>Click either option below to contact me.</p>
+
+                        <a class="contact-link" href="mailto:dank6070@gmail.com?subject=Coaching%20Enquiry">
+                            ✉ dank6070@gmail.com
+                        </a>
+
+                        <a class="contact-link" href="tel:0852017958">
+                            ☎ 085 201 7958
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Follow Me</h3>
+                        <p>Follow my training and fitness content.</p>
+
+                        <div class="socials">
+                            <a class="social" href="https://www.tiktok.com/@dankole0" target="_blank" rel="noopener">
+                                TikTok @dankole0
+                            </a>
+
+                            <a class="social" href="https://www.instagram.com/dankole0/" target="_blank" rel="noopener">
+                                Instagram @dankole0
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            © 2026 DANKOLE COACHING · Online Fitness Coaching
         </div>
-
-        <div class="week">
-            <h3>WEEKS 3–4</h3>
-            <p>
-                Start progressing. Increase training intensity and
-                begin tracking your strength and performance.
-            </p>
-        </div>
-
-        <div class="week">
-            <h3>WEEKS 5–6</h3>
-            <p>
-                Build momentum. Progressive overload becomes a major
-                focus as you continue developing your physique.
-            </p>
-        </div>
-
-        <div class="week">
-            <h3>WEEKS 7–8</h3>
-            <p>
-                Push your limits. Training becomes more challenging
-                while maintaining proper technique and recovery.
-            </p>
-        </div>
-
-        <div class="week">
-            <h3>WEEKS 9–10</h3>
-            <p>
-                Get stronger. Fine-tune your training and focus on
-                consistent progress week after week.
-            </p>
-        </div>
-
-        <div class="week">
-            <h3>WEEKS 11–12</h3>
-            <p>
-                Finish strong. Review your progress, measure your
-                results and build the foundation for your next goal.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- WHAT YOU GET -->
-<section>
-
-    <div class="section-title">
-
-        <h2>WHAT YOU <span>GET</span></h2>
-
-        <p>Everything you need to stay consistent.</p>
-
-    </div>
-
-
-    <div class="features">
-
-        <div class="feature">
-            <div class="icon">🏋️</div>
-            <h3>Training Plan</h3>
-            <p>
-                Structured workouts designed around your goals and
-                experience level.
-            </p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">📈</div>
-            <h3>Progress Tracking</h3>
-            <p>
-                Track your workouts and strength so you can see your
-                progress over the 12 weeks.
-            </p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">🔥</div>
-            <h3>Accountability</h3>
-            <p>
-                Stay motivated and consistent with coaching and
-                regular check-ins.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PRICING -->
-<section id="pricing" class="course">
-
-    <div class="section-title">
-
-        <h2>JOIN <span>GETBIGGER</span></h2>
-
-        <p>Ready to start your 12-week transformation?</p>
-
-    </div>
-
-
-    <div class="pricing">
-
-        <h3>12 WEEK COACHING</h3>
-
-        <div class="price">€199</div>
-
-        <p>Complete 12-week coaching program</p>
-
-        <ul>
-            <li>✓ Personalised training plan</li>
-            <li>✓ Weekly progress tracking</li>
-            <li>✓ Coaching support</li>
-            <li>✓ Exercise guidance</li>
-            <li>✓ 12 weeks of accountability</li>
-        </ul>
-
-        <a href="#contact" class="button">JOIN NOW</a>
-
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-
-    <div class="section-title">
-
-        <h2>READY TO <span>GETBIGGER?</span></h2>
-
-        <p>
-            Send me a message and let's get your 12-week journey started.
-        </p>
-
-    </div>
-
-    <a href="mailto:YOUR-EMAIL@example.com" class="button">
-        EMAIL ME
-    </a>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-    <p>© 2026 GETBIGGER. All Rights Reserved.</p>
-
-    <p>GYM COACHING • STRENGTH • MUSCLE • CONFIDENCE</p>
-
-</footer>
-```
+    </footer>
 
 </body>
 </html>
